@@ -15,6 +15,13 @@ Rutas del plugin (relativas a este archivo): `../../base/`, `../../templates/`, 
 - Precedencia, de menor a mayor: `ESTILO-BASE` → `ESTILO.md` del cliente → `CLIENTE.md` (devoluciones) → `notas.txt` del reel → lo que pida el editor en el chat. Las reglas **[fija]** del ESTILO-BASE no se pisan. Toda excepción queda anotada en `REVISION.md`.
 - No se escribe en la plataforma. No se publica nada fuera de la PC sin que el editor lo pida para un reel puntual.
 - No se renderiza sin "aprobado" del editor y con el checklist sin ✗ (o con la excepción autorizada por escrito).
+- El plugin tiene un **hook guardián** que hace cumplir lo anterior aunque se intente saltear:
+  - bloquea escribir, mover o borrar dentro de `<Mes>/<DD-MM-AAAA>/`;
+  - bloquea modificar los archivos del plugin;
+  - bloquea `hyperframes render` si `REVISION.md` (en la raíz del proyecto) no está `aprobado`/`renderizado` o tiene ✗ sin `render_con_pendientes`;
+  - pide confirmación antes de `hyperframes publish`.
+
+  Si el hook bloquea algo, explicarle al editor el motivo que devolvió. Nunca buscar otra forma de hacer lo mismo (otro comando, un script, renombrar carpetas).
 
 ## 0. Arranque
 1. Comprobar herramientas: `npx hyperframes doctor` y `ffprobe -version`. Si falla algo, decir qué instalar y parar.
@@ -74,7 +81,7 @@ Para el piloto (y después para cada reel):
    - transiciones o efectos con nombre: `/hyperframes-registry` antes de hacerlos a mano.
 
    Mapeo: guion hablado en orden HOOK → DESARROLLO → CIERRE, clips en el orden de numeración, textos en pantalla literales en el momento en que se dice lo que acompañan, y "Visual:" como guía de plano y efecto. Cierre con CTA y logo según el estilo.
-7. **QA**: `npx hyperframes check` y snapshots (`npx hyperframes snapshot`) en el hook, a mitad del desarrollo y en el cierre. Completar `REVISION.md` desde `../../templates/REVISION.template.md` con el checklist de `../../base/QA-CHECKLIST.md` (niveles 1 y 2). Corregir todo lo que se pueda corregir antes de mostrar.
+7. **QA**: `npx hyperframes check` y snapshots (`npx hyperframes snapshot`) en el hook, a mitad del desarrollo y en el cierre. Completar `REVISION.md`, en la raíz del proyecto (al lado de `hyperframes.json`), desde `../../templates/REVISION.template.md` con el checklist de `../../base/QA-CHECKLIST.md` (niveles 1 y 2). Corregir todo lo que se pueda corregir antes de mostrar.
 8. **Revisión**: `npx hyperframes preview --background`. Verificar que el link responde y pasárselo al editor junto con: duración, snapshots, ✗ pendientes, devoluciones previas y cómo se respetaron, y excepciones.
 
 **Modo NUEVO, dos variantes**: el mismo reel en `<DD-MM-AAAA>` (variante A, sobria: cortes secos, subtítulos simples, música suave) y `<DD-MM-AAAA>-varB` (variante B, dinámica: más punch-ins, transiciones de bloque, SFX). Las dos dentro del manual de marca. Presentarlas lado a lado y preguntar cuál sigue. La no elegida queda marcada "descartada" en su `REVISION.md`, no se borra.
@@ -92,6 +99,7 @@ Para cada reel 🟢/🟡 que falte, en orden de fecha: pasos 1 a 7 de arriba, co
 - Si el cambio contradice `ESTILO.md` o una devolución del cliente, avisarlo en una línea y hacerlo igual si el editor lo confirma. Queda como excepción.
 - Si el editor pide el mismo tipo de cambio en 2 o más reels, preguntar si se aplica a todos los del mes (y actualizar `_look/frame.md`).
 - **"aprobado 08-10"**: `estado: aprobado` en `REVISION.md` y ✓ en "el editor revisó".
+- **"renderizá igual el 08-10"** (con ✗ abiertos): solo si lo escribe el editor. Anotar su motivo en `render_con_pendientes` de `REVISION.md` y recién ahí renderizar.
 - **"renderizá los aprobados"** (o "renderizá el 08-10"): para cada aprobado sin ✗ abierto, `npx hyperframes render` a `renders/<slug>-<DD-MM-AAAA>.mp4`. Después medir loudness (`ffmpeg -i <mp4> -af ebur128=peak=true -f null -`), completar el nivel 1 y poner `estado: renderizado` y la ruta. Si queda fuera de rango, corregir la mezcla y volver a renderizar.
 - **"compartí el 08-10"**: `npx hyperframes publish` (privado). Antes, confirmar con el editor que se sube a HeyGen. Si el proyecto pesa más de 200 MB, generar proxies livianos de los clips para esa publicación. Guardar la URL en `REVISION.md`.
 

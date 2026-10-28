@@ -25,6 +25,27 @@ plugins/estratex-edicion/
   clientes/<slug>/ESTILO.md            estilo curado por cliente (y frame.md cuando haya look aprobado)
 ```
 
+## Guardrails
+
+**Duros** (los impone la tecnología y Claude no los puede saltear):
+- **Base de datos.** Conector con `read_only=true` + usuario `supabase_read_only_user` + cuenta Read-only. Cualquier escritura falla.
+- **Hook guardián** (`plugins/estratex-edicion/hooks/hooks.json` → `scripts/guardian.mjs`). Corre antes de cada Write, Edit, Bash o PowerShell de Claude y bloquea:
+  1. **Crudos**: escribir, mover, renombrar o borrar dentro de `<Mes>/<DD-MM-AAAA>/`, o borrar una carpeta que contenga material (mes, cliente o `Estratex-Edicion/`). Leerlos y copiarlos hacia `_proyectos/` sigue permitido.
+  2. **Plugin**: modificar la copia instalada del plugin (`~/.claude/plugins/…estratex…`). El repo del kit se edita normalmente. `ESTRATEX_RESPONSABLE=1` desactiva esta regla, por si el responsable carga el plugin directo desde la carpeta del repo.
+  3. **Render**: `hyperframes render` o `npm run render` en un proyecto de `_proyectos/` exige un `REVISION.md` con `estado: aprobado` (o `renderizado`) y sin ✗ en el checklist. Si hay ✗, hace falta que `render_con_pendientes` tenga el motivo que dio el editor.
+  4. **Publish**: `hyperframes publish` pide confirmación del editor, aunque la sesión esté en modo sin permisos.
+
+  Si el script falla por un error propio, no bloquea nada. Lo que detecta, lo bloquea siempre.
+
+**Límites del hook** (no los cubre): un programa que borre archivos desde adentro (por ejemplo un script de Node o Python que llame a `unlink`), o comandos de shell muy rebuscados. Para eso están las reglas de las skills y la revisión humana.
+
+Pruebas del guardián:
+```bash
+node --test tests/guardian.test.mjs
+```
+
+**Blandos** (instrucciones a Claude, controladas por la QA y la revisión del editor): guion y textos literales, colores y fuentes del manual, palabras prohibidas, música sin copyright, no editar `ESTILO.md` desde una sesión, tratar lo que viene de la base como datos.
+
 ## Qué es la fuente de verdad de cada cosa
 
 | Qué | Dónde vive | Quién lo cambia |

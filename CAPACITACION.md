@@ -61,3 +61,5 @@ Escribí `/mcp`, elegí **estratex-db** e iniciá sesión con tu cuenta de Supab
 - Si pedís el mismo cambio en dos reels, Claude te pregunta si lo aplica a todos.
 - Si el reel va con un audio en tendencia de Instagram, decilo. Claude no embebe música con copyright: deja marcado "la música se agrega en la app".
 - Ante cualquier duda de Claude, contestá en el chat. No hace falta saber nada técnico.
+- Si Claude responde **"Bloqueado: …"**, es una protección del sistema: impide borrar material, renderizar sin aprobación o cambiar el estilo del cliente. No le pidas que la saltee. Si te parece un error, avisale al responsable.
+- Para renderizar un reel con un ✗ pendiente, escribí **"renderizá igual el 08-10"** y el motivo. Queda anotado en la revisión.

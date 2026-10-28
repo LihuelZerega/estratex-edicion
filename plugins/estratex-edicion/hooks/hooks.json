@@ -1,0 +1,18 @@
+{
+  "description": "Guardián de estratex-edicion: protege crudos y archivos del plugin, exige aprobación para renderizar y confirmación para publicar.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|NotebookEdit|Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": ["${CLAUDE_PLUGIN_ROOT}/scripts/guardian.mjs"],
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}
