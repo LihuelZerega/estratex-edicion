@@ -1,0 +1,149 @@
+{
+  "_nota": "Clientes activos en la plataforma (sin \"Prueba (NO TOCAR)\"). carpeta = nombre de la carpeta en Estratex-Edicion/. Agregar o dar de baja clientes acá.",
+  "clientes": [
+    {
+      "nombre": "Alberto Ramos",
+      "carpeta": "Alberto Ramos",
+      "slug": "alberto-ramos",
+      "client_id": "e5de64ca-f88d-4bcb-992b-db72dc5c5454"
+    },
+    {
+      "nombre": "Alejandro Seguros",
+      "carpeta": "Alejandro Seguros",
+      "slug": "alejandro-seguros",
+      "client_id": "8296f071-1540-4b54-818a-54939e0da327"
+    },
+    {
+      "nombre": "Alipan",
+      "carpeta": "Alipan",
+      "slug": "alipan",
+      "client_id": "df431ec3-4034-4e54-8702-0c67906845c5"
+    },
+    {
+      "nombre": "Ana Psico",
+      "carpeta": "Ana Psico",
+      "slug": "ana-psico",
+      "client_id": "7329a787-bd7e-43d3-8175-11711d149d3c"
+    },
+    {
+      "nombre": "Artez Westerley",
+      "carpeta": "Artez Westerley",
+      "slug": "artez-westerley",
+      "client_id": "55a9bb82-b30e-4398-8183-333aa2b8c383"
+    },
+    {
+      "nombre": "Atelier",
+      "carpeta": "Atelier",
+      "slug": "atelier",
+      "client_id": "cfc0d071-72e8-4471-adfe-d6639c45c190"
+    },
+    {
+      "nombre": "Balsaga",
+      "carpeta": "Balsaga",
+      "slug": "balsaga",
+      "client_id": "bd148fb5-c6d8-4405-93ff-927b238e0b85"
+    },
+    {
+      "nombre": "Cadigo",
+      "carpeta": "Cadigo",
+      "slug": "cadigo",
+      "client_id": "5f5df010-395c-46a8-b9c6-83ac6dcc59fd"
+    },
+    {
+      "nombre": "Consultorios Necochea",
+      "carpeta": "Consultorios Necochea",
+      "slug": "consultorios-necochea",
+      "client_id": "8b1b7db4-1f66-4df7-ad31-da3a873684c7"
+    },
+    {
+      "nombre": "Dulce Reina",
+      "carpeta": "Dulce Reina",
+      "slug": "dulce-reina",
+      "client_id": "8dfd5f4e-ab24-40f3-85f5-e0f080d843b3"
+    },
+    {
+      "nombre": "Edaci",
+      "carpeta": "Edaci",
+      "slug": "edaci",
+      "client_id": "3a8c5ad7-8f69-49fd-a7ef-eb7d778865df"
+    },
+    {
+      "nombre": "Envasar",
+      "carpeta": "Envasar",
+      "slug": "envasar",
+      "client_id": "1ea5edca-c486-4856-8ec9-468651bee039"
+    },
+    {
+      "nombre": "GLS Amoblamientos",
+      "carpeta": "GLS Amoblamientos",
+      "slug": "gls-amoblamientos",
+      "client_id": "90afd4d5-b969-482a-88aa-837469dc0026"
+    },
+    {
+      "nombre": "GNC Plus",
+      "carpeta": "GNC Plus",
+      "slug": "gnc-plus",
+      "client_id": "05593104-9562-4037-a60a-f205700d73d4"
+    },
+    {
+      "nombre": "Había una vez",
+      "carpeta": "Habia una vez",
+      "slug": "habia-una-vez",
+      "client_id": "e958769a-144e-4201-95f7-dac89c3a03e5"
+    },
+    {
+      "nombre": "kalmork",
+      "carpeta": "kalmork",
+      "slug": "kalmork",
+      "client_id": "80a3b7a0-6f3b-4d4e-a6b1-e22df5c53c55"
+    },
+    {
+      "nombre": "Kiros",
+      "carpeta": "Kiros",
+      "slug": "kiros",
+      "client_id": "18431fc1-aa4c-47eb-938c-df946d374df4"
+    },
+    {
+      "nombre": "Lavandera",
+      "carpeta": "Lavandera",
+      "slug": "lavandera",
+      "client_id": "9c216620-aa4d-489d-9706-c056a325bbe3"
+    },
+    {
+      "nombre": "Luquitour",
+      "carpeta": "Luquitour",
+      "slug": "luquitour",
+      "client_id": "5772e929-0378-4aea-8d36-3daacda4f88b"
+    },
+    {
+      "nombre": "MyC",
+      "carpeta": "MyC",
+      "slug": "myc",
+      "client_id": "12881ee5-15bb-4e25-a94d-8aa0187e68f1"
+    },
+    {
+      "nombre": "Paranay YPF",
+      "carpeta": "Paranay YPF",
+      "slug": "paranay-ypf",
+      "client_id": "ae116d19-1fa1-4c0b-b6c6-800559be0a23"
+    },
+    {
+      "nombre": "Piletas Ramiro",
+      "carpeta": "Piletas Ramiro",
+      "slug": "piletas-ramiro",
+      "client_id": "b6181ddf-f7e9-468e-8899-8a28bc1c91ae"
+    },
+    {
+      "nombre": "Reydi",
+      "carpeta": "Reydi",
+      "slug": "reydi",
+      "client_id": "3afda6e5-2b08-4ea2-afb0-c6f88ce6f20f"
+    },
+    {
+      "nombre": "Uniformo",
+      "carpeta": "Uniformo",
+      "slug": "uniformo",
+      "client_id": "360fca93-bec9-4846-85b3-571023fa9302"
+    }
+  ]
+}

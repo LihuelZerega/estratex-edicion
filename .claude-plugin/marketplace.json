@@ -1,0 +1,16 @@
+{
+  "name": "estratex",
+  "owner": {
+    "name": "Estratex"
+  },
+  "metadata": {
+    "description": "Plugins internos de Estratex."
+  },
+  "plugins": [
+    {
+      "name": "estratex-edicion",
+      "source": "./plugins/estratex-edicion",
+      "description": "Pipeline único de edición de reels con Claude + HyperFrames para todos los clientes de Estratex."
+    }
+  ]
+}

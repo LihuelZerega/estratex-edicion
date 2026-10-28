@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "estratex-db": {
+      "type": "http",
+      "url": "https://mcp.supabase.com/mcp?project_ref=jpxsxjuawnepnfvsugko&read_only=true&features=database"
+    }
+  }
+}

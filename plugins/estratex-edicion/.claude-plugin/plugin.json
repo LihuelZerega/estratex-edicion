@@ -1,0 +1,8 @@
+{
+  "name": "estratex-edicion",
+  "version": "0.1.2",
+  "description": "Pipeline único de edición de reels: contexto del cliente desde la plataforma (solo lectura), edición con HyperFrames, revisión y cierre de mes.",
+  "author": {
+    "name": "Estratex"
+  }
+}
