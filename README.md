@@ -86,6 +86,19 @@ No pasa nada si una PC queda atrasada. Cada `CLIENTE.md` registra la versión co
 
 ## Instalación en cada PC
 
+### Rápida: con el script (recomendado)
+
+Antes de empezar, la PC tiene que tener Claude Desktop instalado y con sesión iniciada, y tenés que tener a mano una cuenta de GitHub con acceso al repo.
+
+1. En el navegador, entrá a GitHub con una cuenta que tenga acceso y abrí [`scripts/instalar-pc.ps1`](scripts/instalar-pc.ps1). Usá el botón **Copy raw file** (el ícono de copiar, arriba a la derecha del archivo).
+2. Abrí **PowerShell** (Inicio → escribir "PowerShell" → Enter; no hace falta como administrador), pegá con clic derecho y apretá Enter.
+3. El script instala lo que falte (Node, Git, GitHub CLI, ffmpeg y la CLI de Claude Code). Además abre el login de GitHub en el navegador, instala las skills de HyperFrames y el kit, y crea `C:\Estratex-Edicion` con una carpeta por cliente. Se puede correr de nuevo sin problema: saltea lo que ya está hecho.
+4. Cerrá Claude Desktop del todo (también desde la bandeja del sistema) y abrilo de nuevo. En la pestaña **Code**, abrí una sesión en `C:\Estratex-Edicion` y escribí `/mcp` → `plugin:estratex-edicion:estratex-db` → **Authenticate**.
+
+Si algún paso falla, el script muestra **ERROR** con el motivo y se detiene.
+
+### Manual: paso a paso
+
 1. Claude Desktop (pestaña Code), Node 22 o superior, ffmpeg, Chrome, git y GitHub CLI (`gh`).
 2. Acceso al repo privado. Cada PC necesita una cuenta de GitHub con acceso de lectura a `LihuelZerega/estratex-edicion`, invitada como colaboradora. Después se guardan las credenciales para que Claude Code pueda clonar sin preguntar:
    ```bash
